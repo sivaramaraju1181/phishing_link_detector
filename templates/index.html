@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phishing Detector</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial;
+    background:linear-gradient(135deg,#0f172a,#1e293b);
+    color:white;
+    text-align:center;
+}
+
+.container{
+    margin-top:100px;
+}
+
+input{
+    width:350px;
+    padding:14px;
+    border:none;
+    border-radius:8px;
+    font-size:16px;
+}
+
+button{
+    padding:14px 22px;
+    border:none;
+    border-radius:8px;
+    background:#22c55e;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#16a34a;
+}
+
+.result{
+    margin-top:25px;
+    font-size:24px;
+    font-weight:bold;
+}
+
+.footer{
+    margin-top:80px;
+    color:#94a3b8;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+    <h1>🔐 Phishing Website Detector</h1>
+    <p>Check whether a website is safe or phishing.</p>
+
+    <form method="POST">
+        <input type="text" name="url" placeholder="Enter website URL..." required>
+        <button type="submit">Scan</button>
+    </form>
+
+    {% if result %}
+        <div class="result">{{ result }}</div>
+    {% endif %}
+</div>
+
+<div class="footer">
+    Built with Flask + Machine Learning
+</div>
+
+</body>
+</html>
